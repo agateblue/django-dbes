@@ -2,17 +2,14 @@
 # -*- coding: utf-8 -*-
 
 
-from django.test import LiveServerTestCase, override_settings
+from django.test import TestCase, override_settings
 from django.utils import timezone
 from django.core import mail
 
 from dbes import models
 
 @override_settings(EMAIL_BACKEND='dbes.backends.EmailBackend')
-class TestDbes(LiveServerTestCase):
-
-    def setUp(self):
-        pass
+class TestDbes(TestCase):
 
     def test_can_display_txt_email_in_view(self):
         mail.send_mail('subject', 'message', 'from@from.com', ['to1@to.com'])
@@ -31,6 +28,3 @@ class TestDbes(LiveServerTestCase):
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertHTMLEqual(response.content.decode('utf-8'), '<strong>message</strong>')
-
-    def tearDown(self):
-        pass
