@@ -14,6 +14,9 @@ class Email(models.Model):
     subject = models.TextField()
     uuid = models.CharField(max_length=36, default=uuid4, unique=True)
 
+    class Meta:
+        ordering = ('-creation_date',)
+        
     @classmethod
     def from_message(cls, recipient, message):
         """create a model instance from a django.core.mail.message.EmailMultiAlternatives instance"""
