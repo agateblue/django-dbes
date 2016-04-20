@@ -12,7 +12,7 @@ class Email(models.Model):
     html_body = models.TextField(null=True, blank=True)
     plain_body = models.TextField(null=True, blank=True)
     subject = models.TextField()
-    uuid = models.CharField(max_length=36, default=lambda: str(uuid4()), unique=True)
+    uuid = models.CharField(max_length=36, default=uuid4, unique=True)
 
     @classmethod
     def from_message(cls, recipient, message):
