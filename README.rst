@@ -30,6 +30,13 @@ Then add the app to your settings.py::
 
     EMAIL_BACKEND = 'dbes.backends.EmailBackend'
 
+Add this to your URLs conf::
+
+    urlpatterns = [
+        # your urls
+        url(r'^emails/', include('dbes.urls', namespace='dbes')),
+    ]
+    
 Run the migrations::
 
     python manage.py migrate dbes

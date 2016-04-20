@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 from uuid import uuid4
-import logging
 
 from django.dispatch import receiver
 from django.db import models
 from django.utils import timezone
 from django.core.urlresolvers import reverse
 
+from . import utils
 
 class Email(models.Model):
     recipient = models.EmailField(db_index=True)
@@ -47,10 +47,4 @@ class Email(models.Model):
 def log_email(sender, instance, created, **kwargs):
     if not created:
         return
-
-    logger = logging.getLogger('django')
-    logger.info('Sending email to {0} with subject "{1}". You can access this email at URL {2}'.format(
-        instance.recipient,
-        instance.subject,
-        instance.get_absolute_url()
-    ))
+    utils.log_email(instance)
