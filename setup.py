@@ -43,7 +43,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 setup(
     name='django-dbes',
     version=version,
-    description="""A django app to store sent emails in database""",
+    description="""A django package to speed-up your HTML email developpement workflow in django""",
     long_description=readme + '\n\n' + history,
     author='Eliot Berriot',
     author_email='contact@eliotberriot.com',

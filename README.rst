@@ -8,7 +8,7 @@ django-dbes
 .. image:: https://travis-ci.org/EliotBerriot/django-dbes.png?branch=master
     :target: https://travis-ci.org/EliotBerriot/django-dbes
 
-A tiny django package to speed-up your HTML email developpement workflow in django.
+A django package to speed-up your HTML email developpement workflow in django.
 
 **Warning**: this package is intended for developpement only.
 
