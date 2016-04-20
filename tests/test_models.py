@@ -21,8 +21,8 @@ class TestDbes(TestCase):
 
     def test_email_creation(self):
         now = timezone.now()
-        email = models.Email(recipient='test@test.com', subject='test', html_content='test')
-
+        email = models.Email(recipient='test@test.com', subject='test', html_body='test')
+        email.save()
         self.assertGreater(email.creation_date, now)
 
     def tearDown(self):

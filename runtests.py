@@ -1,4 +1,5 @@
-import sys
+import sys, os
+TEST_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tests')
 
 try:
     from django.conf import settings
@@ -12,9 +13,10 @@ try:
                 "ENGINE": "django.db.backends.sqlite3",
             }
         },
-        ROOT_URLCONF="dbes.urls",
+        ROOT_URLCONF="tests.urls",
         INSTALLED_APPS=[
             "django.contrib.auth",
+            "django.contrib.admin",
             "django.contrib.contenttypes",
             "django.contrib.sites",
             "dbes",

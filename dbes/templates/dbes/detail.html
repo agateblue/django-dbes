@@ -1,0 +1,1 @@
+{% if email.html_body %}{{ email.html_body|safe }}{% else %}{{ email.plain_body }}{% endif %}
