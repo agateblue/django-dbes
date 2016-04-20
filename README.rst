@@ -1,6 +1,6 @@
-=============================
-django-dbes
-=============================
+===========================================
+django-dbes (Django Database Email Storage)
+===========================================
 
 .. image:: https://badge.fury.io/py/django-dbes.png
     :target: https://badge.fury.io/py/django-dbes
