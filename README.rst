@@ -8,12 +8,11 @@ django-dbes
 .. image:: https://travis-ci.org/EliotBerriot/django-dbes.png?branch=master
     :target: https://travis-ci.org/EliotBerriot/django-dbes
 
-A django app to store sent emails in database
+A django app to store sent emails in database, for developement purpose. It's bundled with an EmailBackend that
+save emails in database instead of actually sending them. You can then display each email using a unique URL
+to debug your HTML and CSS.
 
-Documentation
--------------
-
-The full documentation is at https://django-dbes.readthedocs.org.
+An admin is provided to conveniently speed up your workflow.
 
 Quickstart
 ----------
@@ -22,9 +21,20 @@ Install django-dbes::
 
     pip install django-dbes
 
-Then use it in a project::
+Then add the app to your settings.py::
 
-    import dbes
+    INSTALLED_APPS = [
+        # other apps
+        'dbes',
+    ]
+
+    EMAIL_BACKEND = 'dbes.backends.EmailBackend'
+
+Run the migrations::
+
+    python manage.py migrate dbes
+
+From now on, each time you send an email, it will be saved as a model instead of being sent.
 
 Features
 --------
