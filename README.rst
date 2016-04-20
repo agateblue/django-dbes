@@ -63,7 +63,6 @@ From now on, each time you send an email, it will be saved as a model instead of
 a log output in your console, such as:
 
     Sending email to contact@test.com with subject "Test". You can access this email at URL http://127.0.0.1:8000/emails/8b2b0bf2-bfb3-4771-a14c-f6d4dc9a635b
-    Sending email to contact@test.com with subject "Test2". You can access this email at URL http://127.0.0.1:8000/emails/8b2b0bf2-bfb3-4661-a14c-f6d4dc9a635b
 
 Just click the email link to display it.
 
